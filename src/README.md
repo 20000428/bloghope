@@ -30,35 +30,35 @@ projects:
     desc: 欢迎交换友情链接
     link: /favorite/links/friend
 
-  - icon: basic
-    name: 小白的编程入门
-    desc: 可能是最好的零基础入门教程
-    link: /developer/basic/
+  # - icon: basic
+  #   name: 小白的编程入门
+  #   desc: 可能是最好的零基础入门教程
+  #   link: /developer/basic/
 
-  - icon: liuyan
-    name: 博客美化教程
-    desc: 记录本站搭建的全过程，适合小白阅读。
-    link: /tutorial/vuepress-hope/
+  # - icon: liuyan
+  #   name: 博客美化教程
+  #   desc: 记录本站搭建的全过程，适合小白阅读。
+  #   link: /tutorial/vuepress-hope/
 
-  - icon: developer
-    name: 开发者的成长之路
-    desc: 作为一名开发者，我觉得这是很酷的一件事情。
-    link: /developer/
+  # - icon: developer
+  #   name: 开发者的成长之路
+  #   desc: 作为一名开发者，我觉得这是很酷的一件事情。
+  #   link: /developer/
 
-  - icon: leetcode
-    name: LeetCode
-    desc: 没事刷一刷算法，预防老年痴呆。
-    link: /leetcode/
+  # - icon: leetcode
+  #   name: LeetCode
+  #   desc: 没事刷一刷算法，预防老年痴呆。
+  #   link: /leetcode/
 
-  - icon: liuyan
-    name: 留言板
-    desc: '留下一些你想说的话。'
-    link: /about/guestbook
+  # - icon: liuyan
+  #   name: 留言板
+  #   desc: '留下一些你想说的话。'
+  #   link: /about/guestbook
 
-  - icon: jiaocheng
-    name: OtterTrade文档站
-    desc: 做最好用的的量化平台。
-    link: /posts/ot-doc_ready.html
+  # - icon: jiaocheng
+  #   name: OtterTrade文档站
+  #   desc: 做最好用的的量化平台。
+  #   link: /posts/ot-doc_ready.html
 
 footer: true
 ---
