@@ -13,6 +13,13 @@ pageInfo: ['Author', 'PageView']
 />
 
 <VPCard
+  title="夜猫君"
+  desc="专心致志做事，大气温和待人。"
+  logo="https://cdn.jsdelivr.net/gh/20000428/PictureBed//img/yemaojun.jpg"
+  link="https://www.yemaojun.top/"
+/>
+
+<!-- <VPCard
   title="Bing🐣"
   desc="鱼跃此时海 花开彼岸天。"
   logo="https://liubing.me/logo.svg"
@@ -59,7 +66,7 @@ pageInfo: ['Author', 'PageView']
   desc="一只爱折腾的攻城狮"
   logo="https://javaquan.cn/img/logo.png"
   link="https://javaquan.cn"
-/>
+/> -->
 
 ---
 

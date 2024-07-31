@@ -14,15 +14,16 @@ export default defineUserConfig({
   host: '0.0.0.0',
   port: 9451,
   // base: '/',
-  base: '/bloghopedist/',
+  // base: '/bloghopedist/',
+  base: '/bloghope/',
   temp: '.vscode/.vp-temp',
   cache: '.vscode/.vp-cache',
 
   locales: {
     '/': {
       lang: 'zh-CN',// 设置正在使用的语言
-      title: '叶随风',
-      description: '叶随风 - 简单快乐，理应如此。',
+      title: 'LeafinWind',
+      description: '叶随风2 - 简单快乐1，理应如此。',
     },
     '/en/': {
       lang: 'en-US',

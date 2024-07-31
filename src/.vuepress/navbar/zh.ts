@@ -4,7 +4,8 @@ export const zhNavbar = navbar([
   {
     text: '总览',
     icon: 'sort',
-    children: ['/posts/catalog.html', '/developer/', '/tutorial/', '/leetcode/', '/tips/', '/tools/'],
+    // children: ['/posts/catalog.html', '/developer/', '/tutorial/', '/leetcode/', '/tips/', '/tools/'],
+    children: ['/posts/catalog.html'],
   },
   {
     text: '分类',
@@ -20,7 +21,7 @@ export const zhNavbar = navbar([
     text: '收藏',
     icon: 'start',
     link: '/favorite',
-    children: ['/favorite/links/', '/favorite/movies/', '/favorite/music/', '/favorite/photos/'],
+    // children: ['/favorite/links/', '/favorite/movies/', '/favorite/music/', '/favorite/photos/'],
   },
   '/about/',
 ]);

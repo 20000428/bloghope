@@ -5,19 +5,29 @@ import { getDirname, path } from 'vuepress/utils';
 // import { BlogPassword } from '../../__private/password.js'; //加密博客
 const __dirname = getDirname(import.meta.url);
 
+// const footerICP_HTML = `
+// <a class="footer-icp" href="https://beian.miit.gov.cn" target="_blank">
+//   <img src="//file.mo7.cc/static/img/beian.png">
+//   陕ICP备2022011574号
+// </a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="footer-about" href="/about/website.html">关于本站</a>
+// `;//页脚的默认内容
+
 const footerICP_HTML = `
 <a class="footer-icp" href="https://beian.miit.gov.cn" target="_blank">
   <img src="//file.mo7.cc/static/img/beian.png">
   陕ICP备2022011574号
-</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="footer-about" href="/about/website.html">关于本站</a>
+</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="footer-about" href="/bloghope/about/website.html ">关于本站</a>
 `;//页脚的默认内容
+
+
 
 export default hopeTheme({
   hostname: 'https://blog.ysf.cc',
   author: {
     name: '叶随风',
-    url: 'https://mo7.cc',
-    email: 'mo7@mo7.cc',
+    // url: 'https://mo7.cc',
+    // email: 'mo7@mo7.cc',
+    email: '504077806@qq.com',
   },
   darkmode: 'toggle',
   editLink: false,
@@ -41,12 +51,13 @@ export default hopeTheme({
   },
 
   // iconAssets: '//at.alicdn.com/t/c/font_3855310_agk3ojvaptw.css',
-  iconAssets: '//at.alicdn.com/t/c/font_4631555_5sudjizrx4r.css',
-  logo: '/pwa/huge.png',
+  iconAssets: '//at.alicdn.com/t/c/font_4631555_5sudjizrx4r.css',  //图标 css 文件网络地址
+  // logo: 'https://cdn.jsdelivr.net/gh/20000428/PictureBed//img/night.jpg',//左上角图标
   docsDir: 'src',
   blog: {
     name: '叶随风',
-    avatar: '//file.mo7.cc/static/lxh_gif/lxh_71.gif',
+    // avatar: '//file.mo7.cc/static/lxh_gif/lxh_71.gif',
+    avatar: 'https://cdn.jsdelivr.net/gh/20000428/PictureBed/img/huge.png',
     description: '专心致志做事，大气温和待人。',
     intro: 'https://blog.mo7.cc/about/me.html',
     medias: {
@@ -70,9 +81,9 @@ export default hopeTheme({
       sidebar: zhSidebar,
       blog: {
         // name: '叶随风',
-        description: '专心致志做事，大气温和待人。',
+        description: 'yyy',
         intro: '/about/me.html',
-        timeline: '简单快乐，理应如此。',
+        timeline: '学无止境。',
       },
     },
 
@@ -103,7 +114,8 @@ export default hopeTheme({
 
     comment: {
       provider: 'Waline',
-      serverURL: 'https://talk.mo7.cc',
+      // serverURL: 'https://talk.mo7.cc',//评论地址
+      serverURL: 'https://waline-three-sooty.vercel.app',
       copyright: false,
       reaction: true,
     },
@@ -250,5 +262,6 @@ export default hopeTheme({
         ],
       },
     },
+
   },
 });
