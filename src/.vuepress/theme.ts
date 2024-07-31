@@ -81,7 +81,7 @@ export default hopeTheme({
       sidebar: zhSidebar,
       blog: {
         // name: '叶随风',
-        description: 'yyy',
+        description: '世间安得双全法',
         intro: '/about/me.html',
         timeline: '学无止境。',
       },
@@ -130,8 +130,10 @@ export default hopeTheme({
       atom: true,
       json: true,
       rss: true,
-      image: '/pwa/72.png',
-      icon: '/pwa/512.png',
+      // image: '/pwa/72.png',
+      // icon: '/pwa/512.png',
+      image: '/pwa/huge.png',//讲道理这是干嘛的，我不知道
+      icon: '/pwa/huge.png',//讲道理这是干嘛的，我不知道
     },
 
     searchPro: {
@@ -208,7 +210,7 @@ export default hopeTheme({
 
     // install @vuepress/plugin-pwa and uncomment these if you want a PWA
     pwa: {
-      favicon: '/favicon.ico',
+      favicon: '/favicon.ico',//图标
       cacheHTML: true,
       cacheImage: true,
       appendBase: true,

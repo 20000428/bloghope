@@ -6,7 +6,7 @@ title: 首页
 #heroImage: /pwa/huge.png #/pwa/144.png
 heroImage: https://cdn.jsdelivr.net/gh/20000428/PictureBed/img/huge.png
 bgImage: //file.mo7.cc/api/public/bz?idx=1
-heroText: 墨七
+heroText: 叶随风
 heroFullScreen: true
 tagline: 简单快乐，理应如此。
 description: 叶随风,博客,记录,分享

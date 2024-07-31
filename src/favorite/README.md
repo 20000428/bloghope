@@ -2,7 +2,7 @@
 icon: favoritea
 
 pageInfo: ['Author', 'PageView']
-date: 1993-02-13
+# date: 1993-02-13
 index: false
 permalink: /favorite/
 ---

@@ -151,14 +151,17 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-// 字体
+// 字体 HeroText
 @font-face {
-  font-family: 'mo7_font';
-  src: url('/font/mo7_font.ttf');
+  // font-family: 'mo7_font';
+  // src: url('/font/mo7_font.ttf');
+  font-family: 'ysf';
+  src: url('/font/ysf.ttf');
 }
 .vp-blog-hero-title {
   font-size: 3.8rem;
-  font-family: 'mo7_font';
+  // font-family: 'mo7_font';
+  font-family: 'ysf';
 }
 
 // 图片切换按钮
