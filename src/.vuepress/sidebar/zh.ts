@@ -217,7 +217,7 @@ export const zhSidebar = sidebar({
     {
       text: 'ABAP',
       icon: '',
-      link: '/sap/abap/',
+      link: '/sap/',
       // prefix: '/sap/abap/',
       children: 'structure',
     },
@@ -239,19 +239,20 @@ export const zhSidebar = sidebar({
   '/': [
     '',
     {
+      text: '博文',
+      icon: 'note',
+      prefix: 'posts/',
+      link: '/posts/',
+      children: 'structure',
+    },
+
+    {
       text: 'SAP',
-      icon: 'sap',
+      icon: '',
       prefix: 'sap/',
       link: '/sap/',
       children: 'structure',
     },
-    // {
-    //   text: '博文',
-    //   icon: 'note',
-    //   prefix: 'posts/',
-    //   link: '/posts/',
-    //   children: 'structure',
-    // },
 
     {
       text: '收藏',

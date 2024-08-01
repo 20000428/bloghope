@@ -1,6 +1,6 @@
 ---
 order: 1
-icon: sort
+icon: sap
 index: false
 pageInfo: ['Author', 'PageView']
 

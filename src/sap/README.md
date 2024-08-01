@@ -1,6 +1,5 @@
 ---
-icon: sap
-
+# icon: sap
 # pageInfo: ['Author', 'Date', 'PageView']
 pageInfo: ['Author', 'ReadingTime', 'PageView', 'Tag','Category']
 index: false
