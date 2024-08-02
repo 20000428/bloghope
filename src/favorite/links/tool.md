@@ -1,7 +1,7 @@
 ---
 icon: gongju
 order: 2 #目录顺序？
-star: 4    //星标？高的在上面
+star: 4
 date: 2024-08-01
 pageInfo: ['Author', 'PageView']
 ---
@@ -13,7 +13,7 @@ pageInfo: ['Author', 'PageView']
 
 <VPCard
   title="AI问答网站，kimi。"
-  desc="AI问答网站，kimi。"
+  desc="很好用，AI问答网站，kimi。"
   logo="https://cdn.jsdelivr.net/gh/20000428/PictureBed//img/kimi.svg"
   link="https://kimi.moonshot.cn/"
 /> 

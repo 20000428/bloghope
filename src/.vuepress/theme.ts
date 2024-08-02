@@ -51,7 +51,7 @@ export default hopeTheme({
   },
 
   // iconAssets: '//at.alicdn.com/t/c/font_3855310_agk3ojvaptw.css',
-  iconAssets: '//at.alicdn.com/t/c/font_4631555_eugifrzxsza.css',  //图标 css 文件网络地址
+  iconAssets: '//at.alicdn.com/t/c/font_4631555_qyg08ij2zu.css',  //图标 css 文件网络地址
   // logo: 'https://cdn.jsdelivr.net/gh/20000428/PictureBed//img/night.jpg',//左上角图标
   docsDir: 'src',
   blog: {
@@ -210,51 +210,52 @@ export default hopeTheme({
 
     // install @vuepress/plugin-pwa and uncomment these if you want a PWA
     pwa: {
-      favicon: '/favicon.ico',//图标
+      // favicon: '/favicon.ico',//图标
+      favicon: '/huge.ico',
       cacheHTML: true,
       cacheImage: true,
       appendBase: true,
       apple: {
-        icon: '/pwa/144.png',
+        icon: '/pwa/huge.png',
         statusBarColor: 'black',
       },
       msTile: {
-        image: '/pwa/144.png',
+        image: '/pwa/huge.png',
         color: '#000',
       },
       manifest: {
         icons: [
           {
-            src: '/pwa/512.png',
+            src: '/pwa/huge.png',
             sizes: '512x512',
             purpose: 'maskable',
             type: 'image/png',
           },
           {
-            src: '/pwa/192.png',
+            src: '/pwa/huge.png',
             sizes: '192x192',
             purpose: 'maskable',
             type: 'image/png',
           },
           {
-            src: '/pwa/512.png',
+            src: '/pwa/huge.png',
             sizes: '512x512',
             type: 'image/png',
           },
           {
-            src: '/pwa/192.png',
+            src: '/pwa/huge.png',
             sizes: '192x192',
             type: 'image/png',
           },
         ],
         shortcuts: [
           {
-            name: '墨七',
-            short_name: '墨七',
+            name: '胡歌',
+            short_name: '胡歌',
             url: '/',
             icons: [
               {
-                src: '/pwa/192.png',
+                src: '/pwa/huge.png',
                 sizes: '192x192',
                 purpose: 'maskable',
                 type: 'image/png',

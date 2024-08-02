@@ -13,9 +13,10 @@ export default defineUserConfig({
   dest: 'dist',
   host: '0.0.0.0',
   port: 9451,
-  // base: '/',
+  base: '/',
   // base: '/bloghopedist/',
-  base: '/bloghope/',
+  // base: '/bloghope/',
+  // base: '/gh-pages/',
   temp: '.vscode/.vp-temp',
   cache: '.vscode/.vp-cache',
 

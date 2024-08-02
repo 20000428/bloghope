@@ -215,7 +215,7 @@ export const zhSidebar = sidebar({
   '/sap/': [
     back_posts,
     {
-      text: 'ABAP',
+      text: 'SAP',
       icon: '',
       link: '/sap/',
       // prefix: '/sap/abap/',
