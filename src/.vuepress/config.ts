@@ -26,7 +26,7 @@ export default defineUserConfig({
       title: 'LeafinWind',
       description: '叶随风2 - 简单快乐1，理应如此。',
     },
-    '/en/': {
+    '/en/': {   //暂时不维护英语版本
       lang: 'en-US',
       title: 'LeafinWind',
       description: 'LeafinWind - Simple and happy, as it should be.',

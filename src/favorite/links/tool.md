@@ -18,7 +18,7 @@ pageInfo: ['Author', 'PageView']
   link="https://kimi.moonshot.cn/"
 /> 
 
-## <MyIcon name="qianduan" /> 前端
+## <MyIcon name="qianduan" /> 图标字体
 
 <VPCard
   title="字体。"

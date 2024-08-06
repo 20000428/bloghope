@@ -194,7 +194,13 @@ export const zhSidebar = sidebar({
     //   prefix: 'essays/',
     //   link: '/favorite/essays/',
     // },
-
+    {
+      text: '日程',
+      icon: '',
+      children: 'structure',
+      prefix: 'schedule.html/',
+      link: '/favorite/schedule.html',
+    },
     {
       text: '博客',
       icon: 'blog',

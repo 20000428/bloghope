@@ -16,7 +16,7 @@ const footerICP_HTML = `
 <a class="footer-icp" href="https://beian.miit.gov.cn" target="_blank">
   <img src="//file.mo7.cc/static/img/beian.png">
   陕ICP备2022011574号
-</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="footer-about" href="/bloghope/about/website.html ">关于本站</a>
+</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="footer-about" href="/about/website.html ">关于本站</a>
 `;//页脚的默认内容
 
 
@@ -51,7 +51,7 @@ export default hopeTheme({
   },
 
   // iconAssets: '//at.alicdn.com/t/c/font_3855310_agk3ojvaptw.css',
-  iconAssets: '//at.alicdn.com/t/c/font_4631555_qyg08ij2zu.css',  //图标 css 文件网络地址
+  iconAssets: '//at.alicdn.com/t/c/font_4631555_6vfol5g2fsv.css',  //图标 css 文件网络地址
   // logo: 'https://cdn.jsdelivr.net/gh/20000428/PictureBed//img/night.jpg',//左上角图标
   docsDir: 'src',
   blog: {
@@ -112,13 +112,17 @@ export default hopeTheme({
     blog: true,
     photoSwipe: false, // 这个插件难用的 一 B
 
+
+    
     comment: {
       provider: 'Waline',
       // serverURL: 'https://talk.mo7.cc',//评论地址
-      serverURL: 'https://waline-three-sooty.vercel.app',
+      // serverURL: 'https://waline-three-sooty.vercel.app',
+      serverURL: 'https://comment.yesuifeng.cc/',
       copyright: false,
       reaction: true,
     },
+
 
     components: {
       components: ['Badge', 'VPCard', 'BiliBili', 'PDF'],

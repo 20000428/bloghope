@@ -28,6 +28,11 @@ projects:
     name: 友情链接
     desc: 欢迎交换友情链接
     link: /favorite/links/friend
+  
+  - icon: rcb
+    name: 日程表
+    desc: 待办事项
+    link: /favorite/schedule.html
 
   # - icon: basic
   #   name: 小白的编程入门

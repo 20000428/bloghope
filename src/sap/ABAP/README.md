@@ -4,18 +4,16 @@ icon: sap
 index: false
 pageInfo: ['Author', 'PageView']
 
-# category:
-#   - 
-# tag:
-#   - 
+category:
+  - 博文
+tag:
+  - 目录
 
 permalink: /sap/abap/
 ---
 
-
 # 开发
-ABAP
-<!-- <Catalog base='/' hideHeading/> -->
-<Catalog base='/sap/abap/' />
----
 
+
+<!-- <Catalog base='/' hideHeading/> -->
+<Catalog base='/sap/abap/' hideHeading/>
