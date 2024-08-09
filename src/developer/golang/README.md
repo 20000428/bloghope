@@ -3,23 +3,23 @@
 # pageInfo: ['Author', 'Date', 'PageView']
 pageInfo: ['Author', 'ReadingTime', 'PageView', 'Tag','Category']
 index: false
-
+title: Go
+# DATE: 2024-08-06
 category:
-  - SAP
+  - GO
 # tag:
 #   - ABAP
 
-permalink: /sap/
+permalink: /developer/golang/
 ---
 
-# SAP
+# 11
 
-::: info sap学无止境
-
+::: info go
 :::
 
 ---
 
-<Catalog base='/sap/' />
+<Catalog base='/developer/golang/' />
 
 ---

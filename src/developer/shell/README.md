@@ -3,23 +3,23 @@
 # pageInfo: ['Author', 'Date', 'PageView']
 pageInfo: ['Author', 'ReadingTime', 'PageView', 'Tag','Category']
 index: false
-
+title: Shell
+# DATE: 2024-08-06
 category:
-  - SAP
+  - shell
 # tag:
 #   - ABAP
 
-permalink: /sap/
+permalink: /developer/shell/
 ---
 
-# SAP
+# 22
 
-::: info sap学无止境
-
+::: info go
 :::
 
 ---
 
-<Catalog base='/sap/' />
+<Catalog base='/developer/shell/' />
 
 ---

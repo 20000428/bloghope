@@ -1,4 +1,4 @@
-import { hopeTheme } from 'vuepress-theme-hope';
+import { blog, hopeTheme } from 'vuepress-theme-hope';
 import { enNavbar, zhNavbar } from './navbar/index.js';
 import { enSidebar, zhSidebar } from './sidebar/index.js';
 import { getDirname, path } from 'vuepress/utils';
@@ -51,7 +51,7 @@ export default hopeTheme({
   },
 
   // iconAssets: '//at.alicdn.com/t/c/font_3855310_agk3ojvaptw.css',
-  iconAssets: '//at.alicdn.com/t/c/font_4631555_6vfol5g2fsv.css',  //图标 css 文件网络地址
+  iconAssets: '//at.alicdn.com/t/c/font_4631555_3pc410ma295.css',  //图标 css 文件网络地址
   // logo: 'https://cdn.jsdelivr.net/gh/20000428/PictureBed//img/night.jpg',//左上角图标
   docsDir: 'src',
   blog: {
@@ -71,6 +71,10 @@ export default hopeTheme({
       // Zhihu: 'https://www.zhihu.com/people/meichangliang',
       BiliBili: 'https://space.bilibili.com/336654564',
       // Rss: 'https://blog.mo7.cc/atom.xml',
+      CloudMusic: {
+        link: 'https://music.163.com/#/my/m/music/playlist?id=2260977299',
+        icon: 'http://p3.music.126.net/tBTNafgjNnTL1KlZMt7lVA==/18885211718935735.jpg'
+    }
     },
   },
 

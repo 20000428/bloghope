@@ -34,6 +34,10 @@ projects:
     desc: 待办事项
     link: /favorite/schedule.html
 
+  - icon: 
+    name: 在线网站
+    desc: 在线网站
+    link: /favorite/links/tool.html
   # - icon: basic
   #   name: 小白的编程入门
   #   desc: 可能是最好的零基础入门教程
@@ -44,10 +48,10 @@ projects:
   #   desc: 记录本站搭建的全过程，适合小白阅读。
   #   link: /tutorial/vuepress-hope/
 
-  # - icon: developer
-  #   name: 开发者的成长之路
-  #   desc: 作为一名开发者，我觉得这是很酷的一件事情。
-  #   link: /developer/
+  - icon: developer
+    name: 开发者的成长之路
+    desc: 富在术数，不在劳身；利在势居，不在力耕
+    link: /developer/
 
   # - icon: leetcode
   #   name: LeetCode

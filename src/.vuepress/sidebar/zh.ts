@@ -47,6 +47,27 @@ export const zhSidebar = sidebar({
       children: 'structure',
     },
   ],
+    // go
+    '/go/': [
+      back_posts,
+      {
+        text: 'go',
+        icon: 'go',
+        link: '/go/',
+        children: 'structure',
+      },
+    ],
+
+        // shell
+        '/shell/': [
+          back_posts,
+          {
+            text: 'shell',
+            icon: 'shell',
+            link: '/shell/',
+            children: 'structure',
+          },
+        ],
   // // 工具
   // '/tools/': [
   //   back_posts,
@@ -132,6 +153,25 @@ export const zhSidebar = sidebar({
   //     children: 'structure',
   //   },
   // ],
+
+   '/developer/shell/': [
+    back_developer,
+    {
+      text: 'Shell',
+      icon: 'shell',
+      link: '/developer/shell/',
+      children: 'structure',
+    },
+  ],
+  '/developer/golang/': [
+    back_developer,
+    {
+      text: 'Go',
+      icon: 'goicon',
+      link: '/developer/golang/',
+      children: 'structure',
+    },
+  ],
 
   // // leetcode
   // '/leetcode/': [
@@ -251,7 +291,13 @@ export const zhSidebar = sidebar({
       link: '/posts/',
       children: 'structure',
     },
-
+    {
+      text: '开发者',
+      // icon: 'developer',
+      prefix: 'developer/',
+      link: '/developer/',
+      children: 'structure',
+    },
     {
       text: 'SAP',
       icon: '',
@@ -267,14 +313,6 @@ export const zhSidebar = sidebar({
       link: '/favorite/',
       children: 'structure',
     },
-
-    // {
-    //   text: '开发者',
-    //   icon: 'developer',
-    //   prefix: 'developer/',
-    //   link: '/developer/',
-    //   children: 'structure',
-    // },
 
     // {
     //   text: '教程',
