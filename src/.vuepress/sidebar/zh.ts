@@ -153,7 +153,16 @@ export const zhSidebar = sidebar({
   //     children: 'structure',
   //   },
   // ],
-
+  // 开发者
+  '/developer/': [
+    back_posts,
+    {
+      text: '开发者',
+      icon: 'developer',
+      link: '/developer/',
+      children: 'structure',
+    },
+  ],
    '/developer/shell/': [
     back_developer,
     {

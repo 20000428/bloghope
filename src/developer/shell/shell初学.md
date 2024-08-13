@@ -5,7 +5,7 @@ date: 2024-08-07
 permalink: /developer/shell/begin.html
 ---
 
-
+Shell-用户跟内核交互的对话界面(kernel-内核)。
 终端，外表看起来就只是一个窗口，上面可以键入字符，当你输入特定字符的时候它会打印出一些反馈。这个字符一般就是[Shell 命令](https://www.runoob.com/linux/linux-shell.html)。
 MacOS 现在默认的 shell 解释器是 [Zsh](https://www.duidaima.com/Group/Topic/OtherTools/17940);
 Linux 上的一般默认为 [Bash](https://zh.wikipedia.org/wiki/Bash);
@@ -52,7 +52,7 @@ Ctrl+Shift+C,Ctrl+Shift+V用于复制粘贴
 | 命令 | 用法 | 运行顺序 |
 | --------- | ---- | ---- |
 | `;` | 命令1;命令2 | 首先运行命令1,然后运行命令2 |
-| `&&` | 命令 1 和 & 命令2 | 仅当命令1成功结束时才运行命令2 |
+| `&&` | 命令1&&命令2 | 仅当命令1成功结束时才运行命令2 |
 | ... | ... | ... |
 
  `||`  →  命令1||命令2 &#x2192; 仅当命令1失败时才运行命令2 
@@ -71,3 +71,35 @@ clear
 
 ```
 
+
+## 实战实例
+
+自动化部署博客生成的静态网站
+```bash
+#!/usr/bin/env sh
+
+# 确保脚本抛出遇到的错误
+set -e
+
+# 生成静态文件
+pnpm run build
+
+# 进入生成的文件夹
+#cd src/.vuepress/dist
+cd dist
+
+# 如果是发布到自定义域名
+# echo 'www.example.com' > CNAME
+
+git init
+git add -A
+git commit -m 'deploy'
+
+# 如果发布到 https://<USERNAME>.github.io
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+
+# 如果发布到 https://<USERNAME>.github.io/<REPO>
+git push -f git@github.com:20000428/bloghope.git master:gh-pages
+
+cd -
+```
