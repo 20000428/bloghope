@@ -34,9 +34,9 @@ projects:
     desc: 待办事项
     link: /favorite/schedule.html
 
-  - icon: 
-    name: 在线网站
-    desc: 在线网站
+  - icon: wangzhan
+    name: 网站工具
+    desc: 应该好用，反正我觉得还行
     link: /favorite/links/tool.html
   # - icon: basic
   #   name: 小白的编程入门

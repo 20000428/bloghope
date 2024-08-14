@@ -15,8 +15,9 @@ permalink: /developer/shell/bash.html
 [001-Bash脚本教程](https://wangdoc.com/bash/intro)
 <!-- more -->
 
-
-## 参数
+## 基本语法
+[基本语法](https://wangdoc.com/bash/grammar)
+### 参数
 - -n
 默认情况下，echo输出的文本末尾会有一个回车符。-n参数可以取消末尾的回车符，使得下一个提示符紧跟在输出内容的后面。
 ```bash
@@ -45,7 +46,7 @@ Hello
 World
 ```
 
-## 快捷键
+### 快捷键
 - `Ctrl + L`：清除屏幕并将当前行移到页面顶部。
 - `Ctrl + C`：中止当前正在执行的命令。
 - `Shift + PageUp`：向上滚动。
@@ -55,3 +56,11 @@ World
 - `Ctrl + W`：删除光标位置前一个单词。
 - `Ctrl + D`：关闭 Shell 会话。
 - `↑，↓`：浏览已执行命令的历史记录。
+- `Tab`: 自动补全代码。
+
+## 模式扩展
+这里内容很多，就不誊写了
+[模式扩展](https://wangdoc.com/bash/expansion)
+
+## 引号和转义
+转义字符和here文档
