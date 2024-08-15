@@ -1,7 +1,7 @@
 {
-  "name": "mo7-blog",
+  "name": "yesuifeng-blog",
   "version": "1.7.3",
-  "description": "墨七的个人博客",
+  "description": "叶随风的个人博客",
   "license": "MIT",
   "type": "module",
   "scripts": {

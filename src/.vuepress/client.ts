@@ -15,7 +15,7 @@ const BlogBeautify = defineAsyncComponent(() => import('./components/BlogBeautif
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {
-    app.component('MyIcon', MyIcon);
+    app.component('MyIcon', MyIcon);//按钮？
   },
   setup() {
     onMounted(() => {});
