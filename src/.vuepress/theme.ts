@@ -274,5 +274,20 @@ export default hopeTheme({
       },
     },
 
+    //by yesuifeng 失败下载插件失败了
+    // 'meting',
+    // {
+    //    // 这个 API 是不可用的，只是作为示例而已
+    //    metingApi: 'https://meting.example.com/api/',
+    //    meting: {
+    //       server: 'netease',
+    //       type: 'playlist',
+    //       mid: '6838211960',
+    //    }, // 不配置该项的话不会出现全局播放器
+    //    aplayer: {
+    //       lrcType: 3,
+    //    },
+    //    defaultCover: 'https://nyakku.moe/avatar.jpg',
+    // },
   },
 });
