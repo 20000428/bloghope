@@ -8,7 +8,7 @@ git commit -m "Init"
 #git remote rm origin来移除它
 git remote rm origin
 git remote add origin https://github.com/20000428/bloghope.git
-git push -u origin "master"
+#git push -u origin "master"
 #之后更改可以用，强制推送到远程master分支
 git push origin master --force
 
