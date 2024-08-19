@@ -19,7 +19,7 @@ permalink: /sap/
 :::
 
 ---
-
+[SAP Help Portal](https://help.sap.com/docs/all-products)
 <Catalog base='/sap/' />
 
 ---

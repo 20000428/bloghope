@@ -8,6 +8,7 @@ permalink: /developer/golang/begin.html
 
 
 <!-- more -->
+[新手开源项目](https://www.cnblogs.com/xueweihan/p/13997806.html)
 
 继续正文...
 

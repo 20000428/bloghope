@@ -20,6 +20,13 @@ pageInfo: ['Author', 'PageView']
   link="https://www.yemaojun.top/"
 />
 
+<VPCard
+  title="Seele_1018"
+  desc="我很懒，所以这里没有简介！"
+  logo="https://profile-avatar.csdnimg.cn/dbfcb34573f44e4593a725a39ce13c47_qq_44826887.jpg!1"
+  link="https://blog.csdn.net/qq_44826887?type=blog
+  "
+/>
 <!-- <VPCard
   title="Bing🐣"
   desc="鱼跃此时海 花开彼岸天。"
