@@ -3,7 +3,7 @@
 git init
 git add .
 git commit -m "Init"
-#git remote add origin https://gitee.com/xxxxxxx/myblog-demo.git
+git remote add origin https://gitee.com/xxxxxxx/myblog-demo.git
 #git remote -v #查看当前关联的远程仓库，如果已经有了一个origin，那么你可以通过
 #git remote rm origin来移除它
 git remote rm origin
