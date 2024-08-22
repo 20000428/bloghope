@@ -69,7 +69,7 @@ pnpm run build
 # 更新同步
 pnpm run sync
 
-# 发布到 https://blog.mo7.cc
+# 发布到 https://yesuifeng.cc/
 pnpm run deploy
 
 ```

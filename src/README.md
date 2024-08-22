@@ -3,7 +3,7 @@ home: true
 layout: BlogHome
 icon: home
 title: 首页
-#heroImage: /pwa/huge.png #/pwa/144.png
+# heroImage: /pwa/huge.png #/pwa/144.png
 heroImage: https://cdn.jsdelivr.net/gh/20000428/PictureBed/img/huge.png
 bgImage: //file.mo7.cc/api/public/bz?idx=1
 heroText: 叶随风
@@ -53,6 +53,10 @@ projects:
     desc: 富在术数，不在劳身；利在势居，不在力耕
     link: /developer/
 
+  - icon: suibi
+    name: 随笔
+    desc: 本小学生的胡思乱想
+    link: /informalessay/
   # - icon: leetcode
   #   name: LeetCode
   #   desc: 没事刷一刷算法，预防老年痴呆。

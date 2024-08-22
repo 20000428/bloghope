@@ -23,6 +23,7 @@ const footerICP_HTML = `
 
 
 export default hopeTheme({
+  // logo: 'https://cdn.jsdelivr.net/gh/20000428/PictureBed/img/huge.png', // 设置网站左上角的图标
   hostname: 'https://blog.ysf.cc',
   author: {
     name: '叶随风',
@@ -52,7 +53,7 @@ export default hopeTheme({
   },
 
   // iconAssets: '//at.alicdn.com/t/c/font_3855310_agk3ojvaptw.css',
-  iconAssets: '//at.alicdn.com/t/c/font_4631555_3t1evirs4au.css',  //图标 css 文件网络地址
+  iconAssets: '//at.alicdn.com/t/c/font_4631555_iufay60i7c9.css',  //图标 css 文件网络地址
   // logo: 'https://cdn.jsdelivr.net/gh/20000428/PictureBed//img/night.jpg',//左上角图标
   docsDir: 'src',
   blog: {

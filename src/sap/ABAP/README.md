@@ -5,9 +5,9 @@ index: false
 pageInfo: ['Author', 'PageView']
 
 category:
-  - 博文
-tag:
-  - 目录
+  - ABAP
+# tag:
+#   - 目录
 
 permalink: /sap/abap/
 ---

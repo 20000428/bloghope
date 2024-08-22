@@ -278,6 +278,17 @@ export const zhSidebar = sidebar({
     },
   ],
 
+
+  '/informalessay/': [
+    back_posts,
+    {
+      text: '随笔',
+      icon: '',
+      link: '/informalessay/',
+      // prefix: '/sap/abap/',
+      children: 'structure',
+    },
+  ],
     // // sap/abap
     // '/sap/abap/': [
     //   back_sap,
@@ -316,8 +327,16 @@ export const zhSidebar = sidebar({
     },
 
     {
+      text: '随笔',
+      icon: '',
+      prefix: 'informalessay/',
+      link: '/informalessay/',
+      children: 'structure',
+    },
+
+    {
       text: '收藏',
-      icon: 'favoritea',
+      // icon: 'favoritea',
       prefix: 'favorite/',
       link: '/favorite/',
       children: 'structure',
@@ -357,7 +376,7 @@ export const zhSidebar = sidebar({
 
     {
       text: '关于',
-      icon: 'info',
+      // icon: 'info',
       prefix: 'about/',
       link: '/about/',
       children: 'structure',

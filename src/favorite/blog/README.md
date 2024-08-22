@@ -12,8 +12,7 @@ permalink: /favorite/blog/
 
 :::
 
----
+
 
 <Catalog base='/favorite/blog/' />
 
----

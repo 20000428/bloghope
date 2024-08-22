@@ -4,10 +4,10 @@ icon: note
 pageInfo: ['Author', 'PageView']
 index: false
 
-category:
-  - 博文
-tag:
-  - 目录
+# category:
+#   - 博文
+# tag:
+#   - 目录
 
 permalink: /posts/
 ---
