@@ -1,6 +1,8 @@
-# 墨七的个人博客
+<!-- # 墨七的个人博客
 
-https://blog.mo7.cc
+https://blog.mo7.cc -->
+# 我的个人博客
+https://yesuifeng.cc
 
 基于 [VuePress Theme Hope](https://theme-hope.vuejs.press) 搭建
 
@@ -31,11 +33,11 @@ https://zhuanlan.zhihu.com/p/577560145
 文档\
 https://waline.js.org
 
-服务地址\
+<!-- 服务地址\
 https://talk.mo7.cc
 
 管理后台(Github 登录)
-https://talk.mo7.cc/ui
+https://talk.mo7.cc/ui -->
 
 ## 图标
 
