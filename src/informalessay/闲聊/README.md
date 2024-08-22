@@ -1,9 +1,11 @@
 ---
 order: 1
 # icon: map
-index: false
 pageInfo: ['Author', 'PageView']
 title: 闲聊
+index: false
+article: false #是否将该文章添加至文章列表中。
+# timeline: false #是否将该文章添加至时间线中。
 category:
   - 随笔
 # tag:
@@ -12,7 +14,6 @@ category:
 permalink: /informalessay/tattle/
 ---
 
-# 随笔
 
 ## 本站全部文章索引
 

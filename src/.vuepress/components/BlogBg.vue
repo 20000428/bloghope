@@ -106,7 +106,8 @@ onMounted(() => {
 
 @mixin bgStyle_light {
   // background-color: rgba(255, 255, 255, 1); // 原色
-  background-image: linear-gradient(50deg, #b3c0ad83 70%, #ebecef90 30%);
+  // background-image: linear-gradient(50deg, #b3c0ad83 70%, #ebecef90 30%);
+  background-image: linear-gradient(50deg, #f3faefd0 70%, #f3faefd0 30%);
 }
 
 @mixin bgStyle_dark {

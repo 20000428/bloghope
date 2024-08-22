@@ -23,6 +23,7 @@ const footerICP_HTML = `
 
 
 export default hopeTheme({
+  // pure: true,//纯净模式
   // logo: 'https://cdn.jsdelivr.net/gh/20000428/PictureBed/img/huge.png', // 设置网站左上角的图标
   hostname: 'https://blog.ysf.cc',
   author: {
@@ -131,7 +132,9 @@ export default hopeTheme({
 
 
     components: {
-      components: ['Badge', 'VPCard', 'BiliBili', 'PDF'],
+      // components: ['Badge', 'VPCard', 'BiliBili', 'PDF'],//内置组件
+      // components: ['VPCard', 'Share'],//内置组件
+      components: ['VPCard'],//内置组件
     },
 
     copyright: false,

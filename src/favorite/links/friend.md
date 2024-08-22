@@ -11,6 +11,7 @@ pageInfo: ['Author', 'PageView']
   desc="专心致志做事，大气温和待人。"
   logo="https://file.mo7.cc/static/lxh_gif/lxh_71.gif"
   link="https://blog.mo7.cc"
+  background="rgba(253, 230, 138, 0.15)"
 />
 
 <VPCard
@@ -18,15 +19,17 @@ pageInfo: ['Author', 'PageView']
   desc="欲把西湖比西子，淡妆浓抹总相宜。"
   logo="https://cdn.jsdelivr.net/gh/20000428/PictureBed//img/yemaojun.jpg"
   link="https://www.yemaojun.top/"
+  background="rgba(253, 230, 138, 0.15)"
 />
 
 <VPCard
   title="Seele_1018"
   desc="我很懒，所以这里没有简介！"
-  logo="https://profile-avatar.csdnimg.cn/dbfcb34573f44e4593a725a39ce13c47_qq_44826887.jpg!1"
-  link="https://blog.csdn.net/qq_44826887?type=blog
-  "
+  logo="https://cdn.jsdelivr.net/gh/20000428/PictureBed//img/hong.jpg"
+  link="https://blog.csdn.net/qq_44826887?type=blog"
+  background="rgba(253, 230, 138, 0.15)"
 />
+
 <!-- <VPCard
   title="Bing🐣"
   desc="鱼跃此时海 花开彼岸天。"
@@ -74,7 +77,7 @@ pageInfo: ['Author', 'PageView']
   desc="一只爱折腾的攻城狮"
   logo="https://javaquan.cn/img/logo.png"
   link="https://javaquan.cn"
-/> -->
+/>  -->
 
 ---
 
