@@ -4,8 +4,9 @@ order: 1 #目录顺序？
 date: 2024-08-07
 permalink: /developer/shell/begin.html
 ---
-
+# Shell
 Shell-用户跟内核交互的对话界面(kernel-内核)。
+<!-- more -->
 终端，外表看起来就只是一个窗口，上面可以键入字符，当你输入特定字符的时候它会打印出一些反馈。这个字符一般就是[Shell 命令](https://www.runoob.com/linux/linux-shell.html)。
 MacOS 现在默认的 shell 解释器是 [Zsh](https://www.duidaima.com/Group/Topic/OtherTools/17940);
 Linux 上的一般默认为 [Bash](https://zh.wikipedia.org/wiki/Bash);
@@ -25,7 +26,7 @@ Windows 下默认为 [PowerShell](https://zh.wikipedia.org/wiki/PowerShell);
 (https://itsfoss.com/view-file-contents/)
 (https://linux.cn/article-16104-1.html)
 [Bash编程脚本入门](https://linux.cn/article-16120-1.html)
-<!-- more -->
+
 ## 常用命令
 ```bash
 #查看主目录中的目录
