@@ -36,6 +36,15 @@ pageInfo: ['Author', 'PageView']
 /> 
 
 
+## <MyIcon name="code" /> code
+
+<VPCard
+  title="在线XML文件"
+  desc="在线XML文件处理"
+  logo="https://cdn.jsdelivr.net/gh/20000428/PictureBed//img/kimi.svg"
+  link="https://tool.p2hp.com/tool-format-xml/"
+/> 
+
 
 <!-- ## <MyIcon name="xiangce" /> 图片 
 
