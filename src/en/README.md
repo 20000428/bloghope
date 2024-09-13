@@ -3,7 +3,8 @@ home: true
 layout: BlogHome
 icon: home
 title: Home
-heroImage: /pwa/144.png
+# heroImage: /pwa/144.png
+heroImage: https://cdn.jsdelivr.net/gh/20000428/PictureBed/img/huge.png
 bgImage: //file.mo7.cc/api/public/bz
 heroText: LeafinWind
 tagline: Something wonderful is about to  happen.

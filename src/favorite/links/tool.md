@@ -41,7 +41,7 @@ pageInfo: ['Author', 'PageView']
 <VPCard
   title="在线XML文件"
   desc="在线XML文件处理"
-  logo="https://cdn.jsdelivr.net/gh/20000428/PictureBed//img/kimi.svg"
+  logo="https://cdn.jsdelivr.net/gh/20000428/PictureBed//img/xml.webp"
   link="https://tool.p2hp.com/tool-format-xml/"
 /> 
 
