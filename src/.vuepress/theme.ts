@@ -134,6 +134,7 @@ export default hopeTheme({
     components: {
       // components: ['Badge', 'VPCard', 'BiliBili', 'PDF'],//内置组件
       // components: ['VPCard', 'Share'],//内置组件
+      // components: ['VPCard','VidStack'],//内置组件
       components: ['VPCard'],//内置组件
     },
 
