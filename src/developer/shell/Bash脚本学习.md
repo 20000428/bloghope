@@ -14,7 +14,7 @@ permalink: /developer/shell/bash.html
 ## 资料
 [001-Bash脚本教程](https://wangdoc.com/bash/intro)
 <!-- more -->
-
+ctrl + u查看网站代码，查看网页前端代码F12
 ## 基本语法
 [基本语法](https://wangdoc.com/bash/grammar)
 ### 参数

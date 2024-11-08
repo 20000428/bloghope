@@ -35,6 +35,12 @@ pageInfo: ['Author', 'PageView']
   link="https://www.iconfont.cn/?spm=a313x.search_index.i3.2.647e3a81OtpFsQ"
 /> 
 
+<VPCard
+  title="翻译"
+  desc="在线翻译"
+  logo="https://static.deepl.com/img/favicon/tile_144.png"
+  link="https://www.deepl.com/zh/translator"
+/> 
 
 ## <MyIcon name="code" /> code
 
@@ -52,6 +58,7 @@ pageInfo: ['Author', 'PageView']
   logo="https://s1.aigei.com/src/img/png/3d/3d34578d9e8e4dd3ac4d3c92292eb5a1.png?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/%7CimageView2/2/w/282&e=1735488000&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:BvpQNiylKCkgGx6dELxCM0LpqLA="
   link="https://tools8.cn/json.html"
 /> 
+
 
 
 <!-- ## <MyIcon name="xiangce" /> 图片 
