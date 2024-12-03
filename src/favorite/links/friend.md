@@ -30,6 +30,14 @@ pageInfo: ['Author', 'PageView']
   background="rgba(253, 230, 138, 0.15)"
 />
 
+<VPCard
+  title="Mr.Hope"
+  desc="Where there is light, there is hope"
+  logo="https://mister-hope.com/logo.svg"
+  link="https://mister-hope.com/"
+  background="rgba(253, 230, 138, 0.15)"
+/>
+
 <!-- <VPCard
   title="Bing🐣"
   desc="鱼跃此时海 花开彼岸天。"
