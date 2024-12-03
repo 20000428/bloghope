@@ -183,7 +183,7 @@ export default hopeTheme({
       attrs: true,
       codetabs: true,
       component: true,
-      demo: true,
+      demo: true, // 启用代码演示
       figure: true,
       imgLazyload: true,
       imgSize: true,
