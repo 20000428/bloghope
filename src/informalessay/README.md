@@ -14,8 +14,7 @@ permalink: /informalessay/
 ---
 
 # 随笔
-1
+写不来呀写不来
 <!-- more -->
-## 本站全部文章索引
 
 <Catalog base='/informalessay/' hideHeading/>

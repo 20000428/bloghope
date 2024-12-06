@@ -15,6 +15,4 @@ permalink: /informalessay/tattle/
 ---
 
 
-## 本站全部文章索引
-
 <Catalog base='/informalessay/tattle/' hideHeading/>
