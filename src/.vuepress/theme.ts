@@ -13,10 +13,16 @@ const __dirname = getDirname(import.meta.url);
 // </a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="footer-about" href="/about/website.html">关于本站</a>
 // `;//页脚的默认内容
 
+// 没有备案呢
+// const footerICP_HTML = `
+// <a class="footer-icp" href="https://beian.miit.gov.cn" target="_blank">
+//   <img src="//file.mo7.cc/static/img/beian.png">
+//   陕ICP备2022011574号
+// </a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="footer-about" href="/about/website.html ">关于本站</a>
+// `;//页脚的默认内容
 const footerICP_HTML = `
 <a class="footer-icp" href="https://beian.miit.gov.cn" target="_blank">
-  <img src="//file.mo7.cc/static/img/beian.png">
-  陕ICP备2022011574号
+
 </a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="footer-about" href="/about/website.html ">关于本站</a>
 `;//页脚的默认内容
 
