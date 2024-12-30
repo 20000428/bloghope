@@ -31,6 +31,23 @@ pageInfo: ['Author', 'PageView']
 />
 
 <VPCard
+  title="菜园前端"
+  desc="前端学习笔记分享、小白都能看懂的笔记"
+  logo="https://note.noxussj.top/logo.png"
+  link="https://note.noxussj.top/"
+  background="rgba(253, 230, 138, 0.15)"
+/>
+
+<VPCard
+  title="粥里有勺糖"
+  desc="你的指尖,拥有改变世界的力量😄"
+  logo="https://sugarat.top/favicon.ico"
+  link="https://sugarat.top/aboutme.html"
+  background="rgba(253, 230, 138, 0.15)"
+/>
+
+
+<VPCard
   title="Mr.Hope"
   desc="Where there is light, there is hope"
   logo="https://mister-hope.com/logo.svg"
