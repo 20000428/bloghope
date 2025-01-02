@@ -48,6 +48,16 @@ pageInfo: ['Author', 'PageView']
 
 
 <VPCard
+  title="梦爱吃鱼"
+  desc="不负心灵,不负今生"
+  logo="https://blog.bsgun.cn/"
+  link="https://blog.bsgun.cn/"
+  background="rgba(253, 230, 138, 0.15)"
+/>
+
+
+
+<VPCard
   title="Mr.Hope"
   desc="Where there is light, there is hope"
   logo="https://mister-hope.com/logo.svg"

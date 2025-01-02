@@ -36,6 +36,13 @@ pageInfo: ['Author', 'PageView']
 /> 
 
 <VPCard
+  title="shields.io"
+  desc="shields.io勋章"
+  logo="https://shields.io/img/logo.png"
+  link="https://shields.io/"
+/> 
+
+<VPCard
   title="翻译"
   desc="在线翻译"
   logo="https://static.deepl.com/img/favicon/tile_144.png"
@@ -73,6 +80,9 @@ pageInfo: ['Author', 'PageView']
   logo="https://www.zapyard.com/wp-content/uploads/2021/05/ZAPYard-Logo-T.png"
   link="https://www.zapyard.com"
 /> 
+
+
+
 
 
 <!-- ## <MyIcon name="xiangce" /> 图片 

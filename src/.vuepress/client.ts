@@ -13,6 +13,7 @@ const MyIcon = defineAsyncComponent(() => import('./components/MyIcon.vue'));
 const BlogBg = defineAsyncComponent(() => import('./components/BlogBg.vue'));
 const BlogBeautify = defineAsyncComponent(() => import('./components/BlogBeautify.vue'));
 const PreviewImage = defineAsyncComponent(() => import('./components/PreviewImage.vue'));//图片预览插件
+// const FooterAnimal = defineAsyncComponent(() => import('./components/FooterAnimal.vue'));//宠物插件
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {
@@ -31,6 +32,7 @@ export default defineClientConfig({
     BlogBeautify,
     BlogBg,
     PreviewImage,
+    // FooterAnimal,
     // ...
   ],
 });
