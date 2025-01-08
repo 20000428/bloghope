@@ -5,6 +5,7 @@ order: 3 #目录顺序？
 title: 大佬大佬
 date: 2025-01-02
 pageInfo: ['Author', 'PageView']
+article: false #是否将该文章添加至文章列表中。
 ---
 
 # 大佬大佬
