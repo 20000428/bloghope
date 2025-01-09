@@ -30,7 +30,7 @@ pageInfo: ['Author', 'PageView']
   background="rgba(253, 230, 138, 0.15)"
 />
 
-<VPCard
+<!-- <VPCard
   title="菜园前端"
   desc="前端学习笔记分享、小白都能看懂的笔记"
   logo="https://note.noxussj.top/logo.png"
@@ -53,7 +53,7 @@ pageInfo: ['Author', 'PageView']
   logo="https://blog.bsgun.cn/"
   link="https://blog.bsgun.cn/"
   background="rgba(253, 230, 138, 0.15)"
-/>
+/> -->
 
 
 
