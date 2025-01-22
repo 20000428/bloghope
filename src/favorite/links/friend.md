@@ -10,7 +10,7 @@ pageInfo: ['Author', 'PageView']
   title="墨七"
   desc="专心致志做事，大气温和待人。"
   logo="https://file.mo7.cc/static/lxh_gif/lxh_71.gif"
-  link="https://blog.mo7.cc"
+  link="https://mo7.cc/"
   background="rgba(253, 230, 138, 0.15)"
 />
 
