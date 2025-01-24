@@ -19,6 +19,14 @@ pageInfo: ['Author', 'PageView']
   link="https://kimi.moonshot.cn/"
 /> 
 
+<VPCard
+  title="DeepSeek"
+  desc="DeepSeek"
+  logo="https://chat.deepseek.com/favicon.svg"
+  link="https://chat.deepseek.com/"
+/> 
+
+
 ## <MyIcon name="qianduan" /> 图标字体
 
 <VPCard
