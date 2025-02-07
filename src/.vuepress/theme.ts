@@ -112,6 +112,7 @@ export default hopeTheme({
     },
   },
 
+  // 站点的加密功能
   encrypt: {
     config: {
       // '/en/demo/encrypt.html': [BlogPassword],
@@ -126,7 +127,7 @@ export default hopeTheme({
     photoSwipe: false, // 这个插件难用的 一 B
     // watermark : true, //网站水印
 
-    
+  // 评论功能  
     comment: {
       provider: 'Waline',
       // serverURL: 'https://talk.mo7.cc',//评论地址
@@ -136,7 +137,7 @@ export default hopeTheme({
       reaction: true,
     },
 
-
+  // 站点中使用的内置组件
     components: {
       // components: ['Badge', 'VPCard', 'BiliBili', 'PDF'],//内置组件
       // components: ['VPCard', 'Share'],//内置组件
@@ -144,8 +145,10 @@ export default hopeTheme({
       components: ['VPCard'],//内置组件
     },
 
+  // 版权功能禁用
     copyright: false,
-
+  
+  // 站点的订阅源（Feed）功能
     feed: {
       atom: true,
       json: true,
@@ -183,6 +186,7 @@ export default hopeTheme({
       ],
     },
 
+    // Markdown 增强功能
     // These features are enabled for demo, only preserve features you need here
     mdEnhance: {
       align: true,
