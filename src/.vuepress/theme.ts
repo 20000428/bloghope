@@ -189,6 +189,7 @@ export default hopeTheme({
     // Markdown 增强功能
     // These features are enabled for demo, only preserve features you need here
     mdEnhance: {
+      // mermaid: true, // 启用 Mermaid.js 支持
       align: true,
       attrs: true,
       codetabs: true,
