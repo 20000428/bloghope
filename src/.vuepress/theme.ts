@@ -126,7 +126,6 @@ export default hopeTheme({
     blog: true,
     photoSwipe: false, // 这个插件难用的 一 B
     // watermark : true, //网站水印
-
   // 评论功能  
     comment: {
       provider: 'Waline',
@@ -233,8 +232,11 @@ export default hopeTheme({
       obsidianImgSize: true,
     },
 
-    // install @vuepress/plugin-pwa and uncomment these if you want a PWA
+    // install @vuepress/plugin-pwa and uncomment these if you want a PWA:
+    // PWA（渐进式网页应用）是一种功能，它允许你的网站在支持的浏览器上提供类似原生应用的体验
+    // 离线访问;提升性能;推送通知;添加到主屏幕
     pwa: {
+      update: 'force',
       // favicon: '/favicon.ico',//图标
       favicon: '/huge.ico',
       cacheHTML: true,
