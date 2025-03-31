@@ -236,7 +236,8 @@ export default hopeTheme({
     // PWA（渐进式网页应用）是一种功能，它允许你的网站在支持的浏览器上提供类似原生应用的体验
     // 离线访问;提升性能;推送通知;添加到主屏幕
     pwa: {
-      update: 'force',
+      // update: 'force',//没什么用啊，不生效
+      update: 'hint',
       // favicon: '/favicon.ico',//图标
       favicon: '/huge.ico',
       cacheHTML: true,
