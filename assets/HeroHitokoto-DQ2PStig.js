@@ -1,0 +1,8 @@
+import{a as g}from"./axios-DsPaXkF5.js";import{g as y,B as E,M as k,h as T,r as B,o as H,N as I,w,b as C}from"./app-DsndM7uF.js";import{_ as b}from"./plugin-vue_export-helper-DlAUqK2U.js";const M=y({__name:"HeroHitokoto",setup(x,{expose:p}){p();let n="https://v1.hitokoto.cn";const u=t=>{const e=window;clearInterval(e.Timer);const s=document.getElementsByClassName("vp-blog-hero-description");if(s.length>0){const m=s[0];m.id="hotWord"}const f=document.getElementById("hotWord");if(!f)return;f.innerHTML=`
+<div class="word">
+  <div class="left">『</div>
+    <span id="hitokoto_text"></span>
+  <div class="right">』</div>
+</div>
+<div class="author" id="hitokoto_author"> ——「${t.from}」</div>
+  `;const l=document.getElementById("hitokoto_author"),_=document.getElementById("hitokoto_text");if(!_||!l)return;l.style.opacity="0";const h=t.hitokoto.split("");let o=0,i=0,v=60,a=!1,c="";e.Timer=setInterval(()=>{const m=h[o];if(c.length<4?l.style.opacity="0":l.style.opacity="1",i!=0){i--,c.length==0&&i==0&&clearInterval(e.Timer);return}a?clearInterval(e.Timer):c+=m,a?o--:o++,o>=h.length&&(a=!0,o=h.length,i=v),o<0&&(a=!1,o=0,i=v),_.innerHTML=c},200)},r=t=>{let e=window.location.pathname;t&&(e=t),e=="/"&&g({method:"get",url:n,params:{}}).then(s=>{u(s.data)}).catch(s=>{n="https://international.v1.hitokoto.cn",r()})};E(()=>{k(()=>{r()}),T().beforeEach(e=>{k(()=>{r(e.fullPath)})})});const d={get hitokotoUrl(){return n},set hitokotoUrl(t){n=t},InsertText:u,GetWord:r};return Object.defineProperty(d,"__isScriptSetup",{enumerable:!1,value:!0}),d}}),$=C("div",{class:"none"},"一言插件",-1);function N(x,p,n,u,r,d){const t=B("ClientOnly");return H(),I(t,null,{default:w(()=>[$]),_:1})}const U=b(M,[["render",N],["__file","HeroHitokoto.vue"]]);export{U as default};
