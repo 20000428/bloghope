@@ -97,8 +97,19 @@ pageInfo: ['Author', 'PageView']
   link="https://sapui5.hana.ondemand.com/#/api/sap.ui.core.mvc.View"
 /> 
 
+<VPCard
+  title="api"
+  desc="api.sap"
+  logo="https://hub.sap.com/falcon-assets/sap-logo.svg"
+  link="https://api.sap.com/"
+/> 
 
-
+<VPCard
+  title="help"
+  desc="help.sap"
+  logo="https://hub.sap.com/falcon-assets/sap-logo.svg"
+  link="https://help.sap.com/"
+/> 
 
 <!-- ## <MyIcon name="xiangce" /> 图片 
 
