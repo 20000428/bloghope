@@ -6,7 +6,7 @@ https://yesuifeng.cc
 
 基于 [VuePress Theme Hope](https://theme-hope.vuejs.press) 搭建
 
-## 博客框架1
+## 博客框架
 
 https://v2.vuepress.vuejs.org/
 
