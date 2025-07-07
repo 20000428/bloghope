@@ -21,6 +21,7 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
+# 用的是 SSH 地址：配置好 SSH key推送时不会再要求输入用户名和密码。
 git push -f git@github.com:20000428/bloghope.git master:gh-pages
 
 cd -
