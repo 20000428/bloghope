@@ -26,6 +26,15 @@ pageInfo: ['Author', 'PageView']
   link="https://chat.deepseek.com/"
 /> 
 
+<VPCard
+  title="Cursor"
+  desc="Cursor"
+  logo="https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/cursor.png"
+  link="https://cursor.com/"
+/> 
+
+
+
 
 ## <MyIcon name="qianduan" /> 图标字体
 
