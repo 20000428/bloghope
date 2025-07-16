@@ -100,14 +100,41 @@ const GetWord = (path?) => {
     toPath = path;
   }
 
+
+  const blockList = ['原神', '崩坏', '王者', '网', '少女'];
+
   // if (toPath == '/' || toPath == '/en/') {
   if (toPath == '/') {
     axios({
       method: 'get',
       url: hitokotoUrl,
-      params: {},
+      params: {
+        c: ['g', 'd'] // 诗词和文学
+        /*
+一言API参数c分类说明：
+a - 动画
+b - 漫画
+c - 游戏
+d - 文学
+e - 原创
+f - 影视
+g - 诗词
+h - 网易云
+i - 哲学
+j - 抖机灵
+*/
+      },
     })
       .then((response) => {
+          // 过滤掉包含“原神”关键字的句子
+  if (
+    response.data.from &&
+    blockList.some(keyword => response.data.from.includes(keyword))
+  ) {
+    // 重新请求一次
+    GetWord();
+    return;
+  }
         InsertText(response.data);
       })
       .catch((error) => {

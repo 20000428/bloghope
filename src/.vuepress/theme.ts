@@ -132,7 +132,7 @@ export default hopeTheme({
       // serverURL: 'https://talk.mo7.cc',//评论地址
       // serverURL: 'https://waline-three-sooty.vercel.app',
       serverURL: 'https://comment.yesuifeng.cc/',
-      copyright: false,
+      noCopyright: true,
       reaction: true,
     },
 
