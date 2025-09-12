@@ -12,3 +12,6 @@ permalink: /developer/golang/begin.html
 
 继续正文...
 
+[Golang 中文学习文档](https://golang.halfiisland.com/)
+[Go 指南](https://tour.go-zh.org/list)
+[go.dev](https://go.dev/learn)
