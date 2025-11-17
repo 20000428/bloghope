@@ -236,7 +236,7 @@ export default hopeTheme({
     // PWA（渐进式网页应用）是一种功能，它允许你的网站在支持的浏览器上提供类似原生应用的体验
     // 离线访问;提升性能;推送通知;添加到主屏幕
     pwa: {
-      // update: 'force',//没什么用啊，不生效
+      update: 'force',//没什么用啊，不生效
       // update: 'hint',
       // https://theme-hope.vuejs.press/zh/guide/advanced/pwa.html#%E5%A4%A7%E5%B0%8F%E6%8E%A7%E5%88%B6
       // favicon: '/favicon.ico',//图标
