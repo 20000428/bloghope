@@ -237,7 +237,7 @@ export default hopeTheme({
     // 离线访问;提升性能;推送通知;添加到主屏幕
     pwa: {
       // update: 'force',//没什么用啊，不生效
-      // update: 'hint',
+      update: 'hint',
       // https://theme-hope.vuejs.press/zh/guide/advanced/pwa.html#%E5%A4%A7%E5%B0%8F%E6%8E%A7%E5%88%B6
       // favicon: '/favicon.ico',//图标
       favicon: '/huge.ico',
