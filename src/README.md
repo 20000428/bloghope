@@ -57,6 +57,11 @@ projects:
     name: 随笔
     desc: 本小学生的胡思乱想
     link: /informalessay/
+
+  - icon: fun
+    name: fun
+    desc: fun
+    link: /fun/practice/
   # - icon: leetcode
   #   name: LeetCode
   #   desc: 没事刷一刷算法，预防老年痴呆。

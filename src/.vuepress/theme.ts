@@ -60,7 +60,7 @@ export default hopeTheme({
   },
 
   // iconAssets: '//at.alicdn.com/t/c/font_3855310_agk3ojvaptw.css',
-  iconAssets: '//at.alicdn.com/t/c/font_4631555_yqc168y1noc.css',  //图标 css 文件网络地址
+  iconAssets: '//at.alicdn.com/t/c/font_4631555_otbc3coe4bk.css',  //图标 css 文件网络地址
   // logo: 'https://cdn.jsdelivr.net/gh/20000428/PictureBed//img/night.jpg',//左上角图标
   docsDir: 'src',
   blog: {

@@ -47,27 +47,27 @@ export const zhSidebar = sidebar({
       children: 'structure',
     },
   ],
-    // go
-    '/go/': [
-      back_posts,
-      {
-        text: 'go',
-        icon: 'go',
-        link: '/go/',
-        children: 'structure',
-      },
-    ],
+  // go
+  '/go/': [
+    back_posts,
+    {
+      text: 'go',
+      icon: 'go',
+      link: '/go/',
+      children: 'structure',
+    },
+  ],
 
-        // shell
-        '/shell/': [
-          back_posts,
-          {
-            text: 'shell',
-            icon: 'shell',
-            link: '/shell/',
-            children: 'structure',
-          },
-        ],
+  // shell
+  '/shell/': [
+    back_posts,
+    {
+      text: 'shell',
+      icon: 'shell',
+      link: '/shell/',
+      children: 'structure',
+    },
+  ],
   // // 工具
   // '/tools/': [
   //   back_posts,
@@ -163,7 +163,7 @@ export const zhSidebar = sidebar({
       children: 'structure',
     },
   ],
-   '/developer/shell/': [
+  '/developer/shell/': [
     back_developer,
     {
       text: 'Shell',
@@ -289,18 +289,18 @@ export const zhSidebar = sidebar({
       children: 'structure',
     },
   ],
-    // // sap/abap
-    // '/sap/abap/': [
-    //   back_sap,
-    //   {
-    //     text: '知识学习',
-    //     icon: '',
-    //     link: '/sap/abap/study/',
-    //     // prefix: 'abap/study/',
-    //     children: 'structure',
-    //   },
-    // ],
-    
+  // // sap/abap
+  // '/sap/abap/': [
+  //   back_sap,
+  //   {
+  //     text: '知识学习',
+  //     icon: '',
+  //     link: '/sap/abap/study/',
+  //     // prefix: 'abap/study/',
+  //     children: 'structure',
+  //   },
+  // ],
+
   // 整体路由划分
   '/': [
     '',
@@ -379,6 +379,13 @@ export const zhSidebar = sidebar({
       // icon: 'info',
       prefix: 'about/',
       link: '/about/',
+      children: 'structure',
+    },
+    {
+      text: 'fun',
+      icon: 'fun',
+      prefix: 'fun/',
+      link: '/fun/',
       children: 'structure',
     },
   ],
