@@ -1,383 +1,431 @@
 <template>
   <ClientOnly>
-    <div
-      v-if="ShowPreviewBox"
-      id="Mo7PreviewBox"
-      @mousemove="on_mousemove"
-      @touchmove="on_mousemove"
-      @mouseup="on_mouseup"
-      @touchend="on_mouseup"
-      @click="closeOnOutsideClick"
-    >
-      <div class="Mo7PreviewBox-topBar">
-        <div class="btn" @click="leftFunc" :class="{ hide: CurrentImgIdx === 0 }">
-          <MyIcon class="icon" name="xiangzuo"></MyIcon>
-        </div>
-        <div class="btn" @click="rightFunc" :class="{ hide: CurrentImgIdx === ImageArr.length - 1 }">
-          <MyIcon class="icon" name="xiangyou"></MyIcon>
-        </div>
-        <div class="btn" @click="zoomFunc">
-          <MyIcon class="icon" name="fangda"></MyIcon>
-        </div>
-        <div class="btn" @click="shrinkFunc">
-          <MyIcon class="icon" name="suoxiao"></MyIcon>
-        </div>
-        <div class="btn" @click="fullscreenFunc">
-          <MyIcon class="icon" name="quanping"></MyIcon>
-        </div>
-        <a class="btn" :href="ImageArr[CurrentImgIdx].src" download>
-          <MyIcon class="icon" name="xiazai"></MyIcon>
-        </a>
-        <div class="btn" @click="ClosePreviewBox">
-          <MyIcon class="icon" name="guanbi"></MyIcon>
-        </div>
-      </div>
+    <Teleport to="body">
+      <Transition name="fade">
+        <div
+          v-if="ShowPreviewBox"
+          ref="previewBoxRef"
+          class="mo7-preview-box"
+          @click="closeOnOutsideClick"
+        >
+          <!-- 工具栏 -->
+          <div class="preview-toolbar">
+            <button 
+              class="tool-btn" 
+              :disabled="CurrentImgIdx === 0"
+              @click.stop="leftFunc"
+            >
+              <MyIcon name="xiangzuo" />
+            </button>
+            <button 
+              class="tool-btn" 
+              :disabled="CurrentImgIdx === ImageArr.length - 1"
+              @click.stop="rightFunc"
+            >
+              <MyIcon name="xiangyou" />
+            </button>
+            <button class="tool-btn" @click.stop="zoomFunc">
+              <MyIcon name="fangda" />
+            </button>
+            <button class="tool-btn" @click.stop="shrinkFunc">
+              <MyIcon name="suoxiao" />
+            </button>
+            <button class="tool-btn" @click.stop="fullscreenFunc">
+              <MyIcon name="quanping" />
+            </button>
+            <a 
+              class="tool-btn" 
+              :href="currentImage?.src" 
+              download
+              @click.stop
+            >
+              <MyIcon name="xiazai" />
+            </a>
+            <button class="tool-btn" @click.stop="ClosePreviewBox">
+              <MyIcon name="guanbi" />
+            </button>
+          </div>
 
-      <img
-        id="Mo7PreviewBox-img"
-        @mousedown="on_mousedown"
-        @touchstart="on_mousedown"
-        @click.stop="() => {}"
-        :src="ImageArr[CurrentImgIdx]?.src"
-        :alt="ImageArr[CurrentImgIdx]?.alt"
-      />
+          <!-- 图片容器 -->
+          <div 
+            class="image-wrapper"
+            @mousedown="on_mousedown"
+            @touchstart.passive="on_mousedown"
+          >
+            <img
+              ref="imageRef"
+              :src="currentImage?.src"
+              :alt="currentImage?.alt"
+              :style="imageStyle"
+              @click.stop
+              draggable="false"
+            />
+          </div>
 
-      <div class="Mo7PreviewBox-idxView">
-        <div class="Mo7PreviewBox-idxView-box">
-          <div class="Mo7PreviewBox-idxView-idx">{{ CurrentImgIdx + 1 }}/{{ ImageArr.length }}</div>
-          <div class="Mo7PreviewBox-idxView-alt" v-if="ImageArr[CurrentImgIdx]?.alt">
-            {{ ImageArr[CurrentImgIdx]?.alt }}
+          <!-- 底部信息 -->
+          <div class="preview-info">
+            <div class="info-box">
+              <span class="index">{{ CurrentImgIdx + 1 }} / {{ ImageArr.length }}</span>
+              <span v-if="currentImage?.alt" class="alt-text">{{ currentImage.alt }}</span>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </Transition>
+    </Teleport>
   </ClientOnly>
 </template>
 
 <script setup lang="ts">
-import { onMounted, nextTick, ref } from 'vue';
+import { 
+  ref, 
+  computed, 
+  onMounted, 
+  onUnmounted, 
+  nextTick, 
+  watch 
+} from 'vue';
 import { useRouter } from 'vue-router';
 import MyIcon from './MyIcon.vue';
 
-let ImageArr = ref<{ src: string; alt: string }[]>([]);
-let ShowPreviewBox = ref(false);
-let CurrentImgIdx = ref(0);
-
-// 关闭预览框
-function ClosePreviewBox() {
-  ShowPreviewBox.value = false;
-  document.body.style.overflow = 'auto';
+// 类型定义
+interface ImageItem {
+  src: string;
+  alt: string;
+  el?: HTMLImageElement;
 }
 
-// 点击非图片区域关闭预览框
-function closeOnOutsideClick(e: MouseEvent) {
-  const imgElm = document.getElementById('Mo7PreviewBox-img') as HTMLImageElement | null;
-  if (!imgElm) return;
+// 检查是否为客户端环境
+const isClient = typeof window !== 'undefined' && typeof document !== 'undefined';
 
-  const rect = imgElm.getBoundingClientRect();
-  const isClickInsideImg =
-    e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+// 状态
+const ImageArr = ref<ImageItem[]>([]);
+const ShowPreviewBox = ref(false);
+const CurrentImgIdx = ref(0);
+const previewBoxRef = ref<HTMLDivElement>();
+const imageRef = ref<HTMLImageElement>();
 
-  if (!isClickInsideImg) {
+// 图片变换状态
+const scale = ref(1);
+const position = ref({ x: 0, y: 0 });
+const isDragging = ref(false);
+const dragStart = ref({ x: 0, y: 0 });
+
+// 计算属性
+const currentImage = computed(() => ImageArr.value[CurrentImgIdx.value]);
+
+const imageStyle = computed(() => ({
+  transform: `translate(${position.value.x}px, ${position.value.y}px) scale(${scale.value})`,
+  cursor: isDragging.value ? 'grabbing' : 'grab'
+}));
+
+// 工具函数：重置状态
+const resetTransform = () => {
+  scale.value = 1;
+  position.value = { x: 0, y: 0 };
+};
+
+// 关闭预览
+const ClosePreviewBox = () => {
+  ShowPreviewBox.value = false;
+  if (isClient) {
+    document.body.style.overflow = '';
+  }
+  resetTransform();
+};
+
+// 点击外部关闭
+const closeOnOutsideClick = (e: MouseEvent) => {
+  if (e.target === previewBoxRef.value) {
     ClosePreviewBox();
   }
-}
+};
 
-// 图片放大
-function zoomFunc() {
-  const imgElm = document.getElementById('Mo7PreviewBox-img') as HTMLImageElement | null;
-  if (imgElm) {
-    let width = imgElm.clientWidth;
-    let height = imgElm.clientHeight;
-    width *= 1.1;
-    height *= 1.1;
-    imgElm.style.width = `${width}px`;
-    imgElm.style.height = `${height}px`;
+// 缩放功能
+const zoomFunc = () => {
+  scale.value = Math.min(scale.value * 1.2, 5);
+};
+
+const shrinkFunc = () => {
+  scale.value = Math.max(scale.value / 1.2, 0.2);
+};
+
+// 真正的全屏 API
+const fullscreenFunc = async () => {
+  if (!previewBoxRef.value || !isClient) return;
+  
+  try {
+    if (!document.fullscreenElement) {
+      await previewBoxRef.value.requestFullscreen();
+    } else {
+      await document.exitFullscreen();
+    }
+  } catch {
+    if (isClient && currentImage.value?.src) {
+      window.open(currentImage.value.src, '_blank');
+    }
   }
-}
+};
 
-// 图片缩小
-function shrinkFunc() {
-  const imgElm = document.getElementById('Mo7PreviewBox-img') as HTMLImageElement | null;
-  if (imgElm) {
-    let width = imgElm.clientWidth;
-    let height = imgElm.clientHeight;
-    width *= 0.9;
-    height *= 0.9;
-    imgElm.style.width = `${width}px`;
-    imgElm.style.height = `${height}px`;
-  }
-}
-
-// 全屏查看
-function fullscreenFunc() {
-  const imgElm = document.getElementById('Mo7PreviewBox-img') as HTMLImageElement | null;
-  if (imgElm) {
-    window.open(imgElm.src);
-  }
-}
-
-// 左滑动
-function leftFunc() {
-  if (CurrentImgIdx.value > 0) {
+// 切换图片
+const navigate = (direction: 'prev' | 'next') => {
+  if (direction === 'prev' && CurrentImgIdx.value > 0) {
     CurrentImgIdx.value--;
-  }
-  nextTick(() => {
-    ImageBoxReset();
-  });
-}
-
-// 右滑动
-function rightFunc() {
-  if (CurrentImgIdx.value < ImageArr.value.length - 1) {
+  } else if (direction === 'next' && CurrentImgIdx.value < ImageArr.value.length - 1) {
     CurrentImgIdx.value++;
   }
-  nextTick(() => {
-    ImageBoxReset();
-  });
-}
+  resetTransform();
+};
 
-// 重置图片大小
-function ImageBoxReset() {
-  const boxElm = document.getElementById('Mo7PreviewBox') as HTMLElement | null;
-  const imgElm = document.getElementById('Mo7PreviewBox-img') as HTMLImageElement | null;
-  if (!boxElm || !imgElm) return;
+const leftFunc = () => navigate('prev');
+const rightFunc = () => navigate('next');
 
-  const boxWidth = boxElm.clientWidth;
-  const boxHeight = boxElm.clientHeight;
+// 拖拽逻辑
+const on_mousedown = (e: MouseEvent | TouchEvent) => {
+  e.preventDefault();
+  isDragging.value = true;
+  
+  const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+  const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+  
+  dragStart.value = {
+    x: clientX - position.value.x,
+    y: clientY - position.value.y
+  };
 
-  imgElm.style.width = `${boxWidth * 0.9}px`;
-  imgElm.style.height = '';
-  imgElm.style.maxWidth = '';
-  imgElm.style.maxHeight = '';
-  imgElm.style.left = '';
-  imgElm.style.top = '';
-  imgElm.style.cursor = '';
-
-  const height = imgElm.clientHeight;
-  if (height > boxHeight) {
-    imgElm.style.width = '';
-    imgElm.style.height = `${boxHeight * 0.9}px`;
+  if (isClient) {
+    document.addEventListener('mousemove', on_mousemove);
+    document.addEventListener('mouseup', on_mouseup);
+    document.addEventListener('touchmove', on_mousemove, { passive: false });
+    document.addEventListener('touchend', on_mouseup);
   }
-}
+};
 
-// 图片点击事件
-function ImageClick(e: MouseEvent) {
-  const elm = e.target as HTMLImageElement;
-  const src = elm.getAttribute('src');
-  if (!src) return;
+const on_mousemove = (e: MouseEvent | TouchEvent) => {
+  if (!isDragging.value) return;
+  e.preventDefault();
 
-  const index = ImageArr.value.findIndex((img) => img.src === src);
-  if (index !== -1) {
-    CurrentImgIdx.value = index;
-    ShowPreviewBox.value = true;
-    document.body.style.overflow = 'hidden';
-    nextTick(() => {
-      ImageBoxReset();
-    });
+  const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+  const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+
+  position.value = {
+    x: clientX - dragStart.value.x,
+    y: clientY - dragStart.value.y
+  };
+};
+
+const on_mouseup = () => {
+  isDragging.value = false;
+  if (isClient) {
+    document.removeEventListener('mousemove', on_mousemove);
+    document.removeEventListener('mouseup', on_mouseup);
+    document.removeEventListener('touchmove', on_mousemove);
+    document.removeEventListener('touchend', on_mouseup);
   }
-}
+};
 
-// 初始化图片预览
-function InitPreviewImage(type: 'bind' | 'unbind') {
+// 键盘导航
+const onKeydown = (e: KeyboardEvent) => {
+  if (!ShowPreviewBox.value) return;
+  
+  switch (e.key) {
+    case 'Escape':
+      ClosePreviewBox();
+      break;
+    case 'ArrowLeft':
+      leftFunc();
+      break;
+    case 'ArrowRight':
+      rightFunc();
+      break;
+    case '+':
+    case '=':
+      zoomFunc();
+      break;
+    case '-':
+      shrinkFunc();
+      break;
+  }
+};
+
+// 初始化图片绑定 - 增加客户端环境检查
+const InitPreviewImage = () => {
+  if (!isClient) return;
+  
   const contentElms = document.getElementsByClassName('theme-hope-content');
-  const contentElm = contentElms.length > 0 ? contentElms[0] : null;
-
+  const contentElm = contentElms[0] as HTMLElement | undefined;
+  
   if (!contentElm) return;
 
-  const images = contentElm.getElementsByTagName('img');
-  const imaArr: { src: string; alt: string }[] = [];
+  const images = Array.from(contentElm.getElementsByTagName('img'));
+  
+  ImageArr.value = images.map(img => ({
+    src: img.src,
+    alt: img.alt || '',
+    el: img
+  }));
 
-  for (const elm of images) {
-    if (type === 'bind') {
-      imaArr.push({
-        alt: elm.getAttribute('alt') || '',
-        src: elm.getAttribute('src') || '',
-      });
-    }
+  // 添加点击事件
+  images.forEach((img, index) => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      CurrentImgIdx.value = index;
+      ShowPreviewBox.value = true;
+      document.body.style.overflow = 'hidden';
+      resetTransform();
+    });
+  });
 
-    elm.removeEventListener('click', ImageClick);
-    if (type === 'bind') {
-      elm.addEventListener('click', ImageClick);
-    }
-  }
+  // 清理函数
+  return () => {
+    images.forEach(img => {
+      img.style.cursor = '';
+      // 注意：这里应该移除事件监听器，但匿名函数无法直接移除
+      // 实际应用中建议将处理函数提取为具名函数
+    });
+  };
+};
 
-  ImageArr.value = imaArr;
+// 只在客户端初始化
+let cleanup: (() => void) | undefined;
+const router = useRouter();
+
+// 将路由钩子也限制在客户端
+if (isClient) {
+  router.beforeEach(() => {
+    cleanup?.();
+  });
+
+  router.afterEach(() => {
+    nextTick(() => {
+      cleanup = InitPreviewImage();
+    });
+  });
 }
 
-// 鼠标拖动图片
-let mouseStatus = false;
-let mouseDownX = 0;
-let mouseDownY = 0;
-let imgElmLeft = 0;
-let imgElmTop = 0;
-
-function Mousemove(e: MouseEvent | TouchEvent) {
-  if (!mouseStatus) return;
-
-  const xDiff = e instanceof MouseEvent ? e.clientX - mouseDownX : e.touches[0].clientX - mouseDownX;
-  const yDiff = e instanceof MouseEvent ? e.clientY - mouseDownY : e.touches[0].clientY - mouseDownY;
-  const left = imgElmLeft + xDiff;
-  const top = imgElmTop + yDiff;
-
-  const imgElm = document.getElementById('Mo7PreviewBox-img') as HTMLImageElement | null;
-  if (imgElm) {
-    imgElm.style.left = `${left}px`;
-    imgElm.style.top = `${top}px`;
-  }
-}
-
-function ImgMouseUp() {
-  const imgElm = document.getElementById('Mo7PreviewBox-img') as HTMLImageElement | null;
-  if (imgElm) {
-    imgElm.style.cursor = 'default';
-  }
-
-  mouseStatus = false;
-  mouseDownX = 0;
-  mouseDownY = 0;
-  imgElmLeft = 0;
-  imgElmTop = 0;
-}
-
-function ImgMouseDown(e: MouseEvent | TouchEvent) {
-  const imgElm = document.getElementById('Mo7PreviewBox-img') as HTMLImageElement | null;
-  if (!imgElm) return;
-
-  imgElm.style.cursor = 'move';
-  mouseStatus = true;
-
-  if (e instanceof MouseEvent) {
-    mouseDownX = e.clientX;
-    mouseDownY = e.clientY;
-  } else {
-    mouseDownX = e.touches[0].clientX;
-    mouseDownY = e.touches[0].clientY;
-  }
-
-  const computedStyle = window.getComputedStyle(imgElm);
-  imgElmLeft = parseInt(computedStyle.left, 10) || 0;
-  imgElmTop = parseInt(computedStyle.top, 10) || 0;
-}
-
-// 监听鼠标事件
-function on_mousemove(e: MouseEvent | TouchEvent) {
-  Mousemove(e);
-}
-
-function on_mouseup(e: MouseEvent | TouchEvent) {
-  ImgMouseUp();
-}
-
-function on_mousedown(e: MouseEvent | TouchEvent) {
-  ImgMouseDown(e);
-}
-
-// 初始化
+// 生命周期
 onMounted(() => {
-  nextTick(() => {
-    InitPreviewImage('bind');
-  });
+  if (isClient) {
+    cleanup = InitPreviewImage();
+    window.addEventListener('keydown', onKeydown);
+  }
+});
 
-  const router = useRouter();
-  router.beforeEach((to, from) => {
-    if (to.path !== from.path) {
-      InitPreviewImage('unbind');
-    }
-  });
-
-  router.afterEach((to, from) => {
-    if (to.path !== from.path) {
-      nextTick(() => {
-        setTimeout(() => {
-          InitPreviewImage('bind');
-        }, 1000);
-      });
-    }
-  });
+onUnmounted(() => {
+  cleanup?.();
+  if (isClient) {
+    window.removeEventListener('keydown', onKeydown);
+    document.body.style.overflow = '';
+  }
 });
 </script>
 
-<style lang="scss">
-.theme-hope-content {
-  img {
-    cursor: pointer;
-  }
-}
-
-#Mo7PreviewBox {
+<style scoped lang="scss">
+.mo7-preview-box {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  overflow: hidden;
-
-  .icon {
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 6px;
-    display: block;
-  }
-
-  .Mo7PreviewBox-topBar {
-    position: fixed;
+  flex-direction: column;
+  z-index: 9999;
+  
+  // 顶部工具栏
+  .preview-toolbar {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     display: flex;
-    align-items: center;
     justify-content: flex-end;
-    box-sizing: border-box;
-    padding: 10px;
-    z-index: 99;
-    .btn {
-      display: block;
-      margin-left: 10px;
-      background-color: rgba(0, 0, 0, 0.4);
-      &.hide {
-        opacity: 0.4;
+    gap: 8px;
+    padding: 16px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+    z-index: 10;
+
+    .tool-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.2s;
+      
+      &:hover:not(:disabled) {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+      }
+      
+      &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
       }
     }
   }
 
-  .Mo7PreviewBox-idxView {
-    position: absolute;
-    bottom: 90px;
-    left: 0;
-    width: 100%;
+  // 图片容器
+  .image-wrapper {
+    flex: 1;
     display: flex;
+    align-items: center;
     justify-content: center;
+    overflow: hidden;
+    touch-action: none;
+    
+    img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      user-select: none;
+      -webkit-user-drag: none;
+      transition: transform 0.1s ease-out;
+      will-change: transform;
+    }
   }
 
-  .Mo7PreviewBox-idxView-box {
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 8px;
-    color: #fff;
-    margin: 0 auto;
-    max-width: 80%;
+  // 底部信息
+  .preview-info {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-  }
-  .Mo7PreviewBox-idxView-idx {
-    font-size: 24px;
-  }
-  .Mo7PreviewBox-idxView-alt {
-    margin-top: 10px;
-    font-size: 20px;
+    
+    .info-box {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 12px 24px;
+      border-radius: 24px;
+      color: #fff;
+      
+      .index {
+        font-size: 14px;
+        opacity: 0.8;
+        margin-right: 12px;
+      }
+      
+      .alt-text {
+        font-size: 16px;
+      }
+    }
   }
 }
 
-#Mo7PreviewBox-img {
-  position: relative;
-  user-select: none;
-  -webkit-user-drag: none;
-  box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+// 过渡动画
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

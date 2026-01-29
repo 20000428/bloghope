@@ -113,6 +113,18 @@ function AddBtnSpin() {
 // }
 
 const LoadMusicList = (callback) => {
+  // 本地音乐（确保文件已放入 .vuepress/public/music/）
+  const localTracks = [
+    {
+      name: '杀死那个石家庄人',
+      artist: '万能青年旅店',
+      url: '/music/就是南方凯（项学凯） - 杀死那个石家庄人.mp3',
+      cover: '', // 可选：封面图片，如 '/images/cover.jpg'
+      lrc: '',   // 可选：歌词文件，如 '/music/lyric.lrc'
+    }
+  ];
+
+
   axios({
     method: 'get',
     url: '//file.mo7.cc/music/list.json',
@@ -120,7 +132,9 @@ const LoadMusicList = (callback) => {
   }).then((response) => {
     var listData = response.data;
     if (listData && listData.length > 0) {
-      GlobalMusicList = listData;
+    // GlobalMusicList = listData;
+    // 关键修改：合并本地音乐和远程音乐（本地排在前面）
+    GlobalMusicList = [...localTracks, ...listData];
     }
     console.log('加载音乐列表', GlobalMusicList);
     callback && callback();
