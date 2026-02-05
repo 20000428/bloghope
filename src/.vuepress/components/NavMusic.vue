@@ -119,8 +119,8 @@ const LoadMusicList = (callback) => {
       name: '杀死那个石家庄人',
       artist: '万能青年旅店',
       url: '/music/就是南方凯（项学凯） - 杀死那个石家庄人.mp3',
-      cover: '', // 可选：封面图片，如 '/images/cover.jpg'
-      lrc: '',   // 可选：歌词文件，如 '/music/lyric.lrc'
+      cover: 'https://cdn-images.dzcdn.net/images/cover/46bbb4fd0dbf37b097db0a521dde0d07/500x500.jpg', // 可选：封面图片，如 '/images/cover.jpg'
+      lrc: '/music/杀死那个石家庄人.lrc',   // 可选：歌词文件，如 '/music/lyric.lrc'
     }
   ];
 
