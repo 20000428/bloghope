@@ -2,6 +2,7 @@
 icon: youlian
 order: 1 #目录顺序？
 pageInfo: ['Author', 'PageView']
+date: 2024-08-05
 ---
 
 # 友链
